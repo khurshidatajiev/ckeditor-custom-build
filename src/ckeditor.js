@@ -73,7 +73,7 @@ Editor.builtinPlugins = [
 	SpecialCharactersCurrency,
 	Table,
 	TableToolbar,
-	Title,
+	//Title,
 	Underline,
 	WordCount
 ];
