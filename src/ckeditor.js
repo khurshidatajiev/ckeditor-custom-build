@@ -27,14 +27,12 @@ import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
 import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
-import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters.js';
 import SpecialCharactersArrows from '@ckeditor/ckeditor5-special-characters/src/specialcharactersarrows.js';
 import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/src/specialcharacterscurrency.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
-import Title from '@ckeditor/ckeditor5-heading/src/title.js';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
 
@@ -66,14 +64,12 @@ Editor.builtinPlugins = [
 	List,
 	ListStyle,
 	MediaEmbed,
-	//MediaEmbedToolbar,
 	Paragraph,
 	SpecialCharacters,
 	SpecialCharactersArrows,
 	SpecialCharactersCurrency,
 	Table,
 	TableToolbar,
-	//Title,
 	Underline,
 	WordCount
 ];
