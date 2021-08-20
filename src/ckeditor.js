@@ -66,7 +66,7 @@ Editor.builtinPlugins = [
 	List,
 	ListStyle,
 	MediaEmbed,
-	MediaEmbedToolbar,
+	//MediaEmbedToolbar,
 	Paragraph,
 	SpecialCharacters,
 	SpecialCharactersArrows,
