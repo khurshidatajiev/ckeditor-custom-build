@@ -12,7 +12,7 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import FileRepository from '@ckeditor/ckeditor5-upload/src/filerepository';
 import { logWarning } from '@ckeditor/ckeditor5-utils/src/ckeditorerror';
-import { get } from 'lodash';
+import { get, forEach } from 'lodash';
 
 /**
  * The Simple upload adapter allows uploading images to an application running on your server using
@@ -175,13 +175,11 @@ class Adapter {
                 return reject( response && response.error && response.error.message ? response.error.message : genericErrorText );
             }
 
-            const urls = {
-                default: get(response, 'fullPath', ''),
-                '100': get(response, 'thumbnails.small.url', ''),
-                '400': get(response, 'thumbnails.medium.url', ''),
-                '1024': get(response, 'thumbnails.large.url', ''),
-                '1920': get(response, 'thumbnails.xlarge.url', ''),
-            }
+            let urls = {};
+            const { urlsOptions } = this.options;
+            forEach(urlsOptions, (path, key) => {
+                urls[key] = get(response, path, '')
+            });
 
             // Resolve with the normalized `urls` property and pass the rest of the response
             // to allow customizing the behavior of features relying on the upload adapters.
