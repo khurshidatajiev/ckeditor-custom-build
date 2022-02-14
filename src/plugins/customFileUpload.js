@@ -1,11 +1,10 @@
-// This SVG file import will be handled by webpack's raw-text loader.
-// This means that imageIcon will hold the source SVG.
-import attachmentIcon from '../assets/icons/attachment.svg';
-
+import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
+import attachmentIcon from '../assets/icons/attachment.svg';
 
 export default class CustomFileUpload extends Plugin {
   init() {
+    console.log('CustomFileUpload init');
     const editor = this.editor;
     const options = this.editor.config.get( 'customFileUpload' );
 
