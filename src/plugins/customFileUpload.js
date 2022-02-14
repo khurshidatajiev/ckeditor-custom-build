@@ -4,7 +4,6 @@ import attachmentIcon from '../assets/icons/attachment.svg';
 
 export default class CustomFileUpload extends Plugin {
   init() {
-    console.log('CustomFileUpload init');
     const editor = this.editor;
     const options = this.editor.config.get( 'customFileUpload' );
 
@@ -18,7 +17,7 @@ export default class CustomFileUpload extends Plugin {
       });
 
       // Callback executed once the image is clicked.
-      view.on('execute', options.execute );
+      view.on('execute', (e) => options.execute(e, editor));
 
       return view;
     });
