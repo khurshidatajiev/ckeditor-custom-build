@@ -5,13 +5,9 @@ import attachmentIcon from '../assets/icons/attachment.svg';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 
 export default class CustomFileUpload extends Plugin {
-  constructor(execute) {
-    super();
-    this.execute = execute;
-  }
-
   init() {
     const editor = this.editor;
+    const options = this.editor.config.get( 'customFileUpload' );
 
     editor.ui.componentFactory.add( 'customFileUpload', locale => {
       const view = new ButtonView( locale );
@@ -23,7 +19,7 @@ export default class CustomFileUpload extends Plugin {
       });
 
       // Callback executed once the image is clicked.
-      view.on('execute', this.execute );
+      view.on('execute', options.execute );
 
       return view;
     });
